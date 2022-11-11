@@ -1,0 +1,9 @@
+GET : url에 정보를 담아서 보냄
+
+https://www.coupang.com/np/search?minPrice=1000&maxPrice=100000&page=1
+
+물음표 뒤에 있는 것들부터 변수와 값을 보내면 서버에서는 거기에 맞게 페이지를 구분해줌
+변수:값 &(and)
+
+POST : 보안으로 인해 바디에 숨긴다 제한이 없기 떄문에 크기가 큰 파일이나 데이터를 보냄
+https://www.coupang.com/np/search?id=nadocoding&pw=1234
