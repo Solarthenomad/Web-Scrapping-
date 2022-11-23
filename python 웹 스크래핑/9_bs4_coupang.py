@@ -22,6 +22,12 @@ for item in items:
         continue #광고 상품 나오는 거 끝날 때까지ㅇ 위의 코드를 현실화하고 다음으로 넘어감
     
     name = item.find("div", attrs={"class" : "name"}).get_text()#제품명
+    
+    #애플 상품 제외
+    if "Apple" in name:
+        print(" apple 상품 제외")
+        continue
+    
     price = item.find("strong", attrs={"class":"price-value"}).get_text()
     #가격
     #리뷰 100개 이상, 평점 4.5 이상 되는 것만 조회하기
@@ -41,8 +47,9 @@ for item in items:
         print("평점 수 없는 상품을 제외합니다.")
         continue
     
-    if float(rate) >= 4.5 and rate_cnt:
+    if float(rate) >= 4.5 and rate_cnt >=50:
         print(name, rate, price, rate_cnt)
+        
         
     
     
@@ -51,6 +58,8 @@ for item in items:
     #광고가 붙은 부분은 제외를 하도록 한다. 내가 긁어온 페이지에 광고가 붙은 것들...
     
     #span태그가 붙은 것들이 광고라는 것을 확인 가능
+    
+
     
     
     
